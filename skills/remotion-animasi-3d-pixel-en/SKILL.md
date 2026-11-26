@@ -1,6 +1,6 @@
 ---
 name: remotion-animasi-3d-pixel-en
-description: Use when the user wants to create an end-to-end 2.5D Pixel Art (HD-2D diorama) animated video in English from an empty folder to a ready-to-upload MP4 using Remotion, Three.js, and ElevenLabs v4 — including greeting, story ideation, tech or science explainers, continuing an episode, or building an RPG diorama animation.
+description: Use when creating 2.5D Pixel Art (HD-2D diorama) animations in English with Remotion, Three.js, and ElevenLabs v4 - including greetings, story ideation, tech/science explainers, or episode sequels.
 license: MIT
 compatibility: Requires Node.js 20+, Git, an ElevenLabs account, and network access for npm packages, sparse clone of lemo-opuscar, and Remotion headless browser.
 ---

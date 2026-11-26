@@ -1,6 +1,6 @@
 ---
 name: remotion-animasi-3d-pixel-id
-description: Gunakan saat pengguna ingin membuat animasi 3D Pixel Art (2.5D / HD-2D diorama) dalam bahasa Indonesia secara interaktif dari folder kosong hingga MP4 siap unggah dengan Remotion, Three.js, dan ElevenLabs v4 — termasuk saat hanya menyapa, mencari ide cerita, edukasi teknologi/sains, melanjutkan episode, atau meminta video bergaya RPG diorama.
+description: Gunakan saat pengguna ingin membuat animasi 3D Pixel Art (2.5D / HD-2D diorama) dalam bahasa Indonesia dengan Remotion, Three.js, dan ElevenLabs v4 - mulai dari sapaan, ide cerita, edukasi, hingga sekuel.
 license: MIT
 compatibility: Requires Node.js 20+, Git, an ElevenLabs account, and network access for npm packages, sparse clone of lemo-opuscar, and Remotion headless browser.
 ---
