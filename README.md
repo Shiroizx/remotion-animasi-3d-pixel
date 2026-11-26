@@ -17,9 +17,9 @@
 
 ### System Requirements
 - **Node.js** v20 or newer (v20 LTS / v22 LTS recommended)
-- **Git** (used automatically to fetch the official `lemo-opuscar` style reference)
+- **Git** (optional; used only after explicit user confirmation to fetch the pinned `lemo-opuscar` visual reference)
 - **ElevenLabs** account (to generate 1 single-pass voiceover MP3)
-- Internet access on first run *(initial downloads for Remotion, Chromium Headless Shell, and sparse-cloned `lemo-opuscar` total ~300–500 MB)*
+- Internet access on first run *(initial downloads for Remotion, Chromium Headless Shell, and optional pinned-commit `lemo-opuscar` reference total ~300–500 MB)*
 
 > **FFmpeg Note:** You do not need a global FFmpeg/FFprobe installation; the pipeline automatically uses the FFmpeg & FFprobe binaries bundled with Remotion (`@remotion/compositor-*`) on Windows, macOS, and Linux.
 
@@ -47,7 +47,7 @@ Open a brand-new empty folder in your AI coding agent (Antigravity, Claude Code,
 The agent guides you through **7 Interactive Gates (GATE 1–7)**:
 1. **GATE 1:** Story idea check or concept brainstorming.
 2. **GATE 2:** Continuity detection (*standalone*, sequel/continuation, or *cliffhanger*).
-3. **GATE 3:** Quota-efficient ElevenLabs v4 script (single MP3 generation) + voice recommendations + automatic Remotion/Three.js project setup.
+3. **GATE 3:** Quota-efficient ElevenLabs v4 script (single MP3 generation) + voice recommendations + Remotion/Three.js workspace setup (with explicit user confirmation before fetching external references).
 4. **GATE 4:** VO-first duration analysis & questionnaire (aspect ratio `9:16` / `16:9` / `1:1`, FPS, frame format, lighting mood, and RPG font style).
 5. **GATE 5:** Pre-production blueprint covering vertical 3D zones, multi-axis camera paths, 10 sprite states, and 3-layer sound design.
 6. **GATE 6:** Modular HD-2D coding, procedural audio synthesis & two-pass `-14 LUFS` mastering, plus an 8-point quality audit.
@@ -73,17 +73,18 @@ remotion-animasi-3d-pixel/
             └── mix-master-audio-template.mjs
 ```
 
-### Automatically Installed Repositories & Dependencies
-When running **GATE 3** inside an empty workspace, the agent transparently downloads and installs the following third-party repositories and packages:
+### Workspace Dependencies & External References
+When running **GATE 3** inside an empty workspace, the agent installs the project's npm packages below and only fetches the external visual reference after your explicit confirmation:
 
 | Package / Repository | Source & Original Author Attribution | Role in Project |
 | :--- | :--- | :--- |
-| `lemomo-ai/lemo-opuscar` *(sparse clone to `.lemo-opuscar/`)* | **Lemomo / lemomoLab** ([lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)) | Read-only official style & directing reference (`DIRECTOR.md`, `TECHNIQUE.md`, `styles/hd-2d/STYLE.md`, `styles/hd-2d/DEMO.md`). |
+| `lemomo-ai/lemo-opuscar` *(optional pinned-commit `8ca0dd8` sparse checkout to `.lemo-opuscar/` after user confirmation)* | **Lemomo / lemomoLab** ([lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)) | Read-only visual architecture, shader, and Three.js/Remotion code-template reference (`DIRECTOR.md`, `TECHNIQUE.md`, `styles/hd-2d/STYLE.md`, `styles/hd-2d/DEMO.md`) — never overrides primary skill rules. |
 | `remotion`, `@remotion/cli`, `@remotion/player`, `@remotion/media-utils`, `@remotion/transitions`, `@remotion/three` | **Remotion Team** ([remotion-dev/remotion](https://github.com/remotion-dev/remotion)) | React video composition engine, headless Chromium renderer, and bundled FFmpeg/FFprobe binaries. |
 | `three` & `@types/three` | **Mr.doob (Ricardo Cabello) & Three.js Contributors** ([mrdoob/three.js](https://github.com/mrdoob/three.js)) | 3D WebGL renderer, *Signed CoC Tilt-Shift DoF*, `UnrealBloom`, and *ACES Filmic* shader pipeline. |
 | `@react-three/fiber` & `@react-three/drei` | **Poimandres (`pmndrs`)** ([pmndrs/react-three-fiber](https://github.com/pmndrs/react-three-fiber)) | Declarative React 18 bindings for Three.js inside `<ThreeCanvas>`. |
-| `vercel-labs/skills@find-skills` | **Vercel Labs** ([vercel-labs/skills](https://github.com/vercel-labs/skills)) | CLI skill discovery utility for the open agent skills ecosystem (`skills.sh`). |
-| `react`, `react-dom`, `lucide-react`, `typescript` *(plus optional `remotion-dev/remotion@add-sfx`)* | **Meta / React Team**, **Lucide Contributors**, **Microsoft**, & **Remotion Team** | React UI runtime, interface icons, TypeScript checking, and optional Remotion SFX pattern reference. |
+| `react`, `react-dom`, `lucide-react`, `typescript` | **Meta / React Team**, **Lucide Contributors**, & **Microsoft** | React UI runtime, interface icons, and TypeScript checking. |
+
+> **Optional Manual Skills:** No external agent skills are installed automatically. If you want optional Remotion SFX pattern guidance, you may manually run `npx skills add remotion-dev/remotion@add-sfx` yourself.
 
 ### Copyright, Public Domain & Creative Adaptation Policy
 - **100% Safe & Copyright-Free Topics:** Original fiction (*Original IP*), folklore, ancient mythology, historical events & biographies, *Public Domain* classic literature/fables, philosophy/psychology, and science/general education are fully permitted (including for monetization), provided scripts are written originally and diorama visuals follow traditional or general descriptions.
@@ -104,9 +105,9 @@ When running **GATE 3** inside an empty workspace, the agent transparently downl
 
 ### Prasyarat Sistem
 - **Node.js** v20 atau lebih baru (disarankan v20 LTS / v22 LTS)
-- **Git** (untuk mengambil referensi gaya resmi `lemo-opuscar` secara otomatis)
+- **Git** (opsional; digunakan hanya setelah konfirmasi eksplisit pengguna untuk mengambil referensi visual `lemo-opuscar` versi terkunci)
 - Akun **ElevenLabs** (untuk men-generate 1 file audio narasi v4)
-- Koneksi internet pada eksekusi pertama *(unduhan awal paket Remotion, Chromium Headless Shell, dan sparse clone `lemo-opuscar` sekitar 300–500 MB)*
+- Koneksi internet pada eksekusi pertama *(unduhan awal paket Remotion, Chromium Headless Shell, serta opsional referensi `lemo-opuscar` versi terkunci sekitar 300–500 MB)*
 
 > **Catatan FFmpeg:** Anda tidak perlu menginstal FFmpeg/FFprobe secara global; pipeline ini menggunakan biner FFmpeg & FFprobe bawaan Remotion (`@remotion/compositor-*`) secara otomatis di Windows, macOS, dan Linux.
 
@@ -134,23 +135,24 @@ Buka folder kosong baru di agen coding Anda (Antigravity, Claude Code, Codex, Cu
 Agen akan memandu Anda melalui **7 Tahap Interaktif (GATE 1–7)**:
 1. **GATE 1:** Pengecekan atau brainstorming ide cerita.
 2. **GATE 2:** Deteksi kontinuitas cerita (*standalone*, sekuel, atau *cliffhanger*).
-3. **GATE 3:** Penulisan naskah ElevenLabs v4 (1x generate utuh) + rekomendasi voice + instalasi otomatis workspace Remotion/Three.js.
+3. **GATE 3:** Penulisan naskah ElevenLabs v4 (1x generate utuh) + rekomendasi voice + penyiapan workspace Remotion/Three.js (dengan konfirmasi eksplisit sebelum mengunduh referensi eksternal).
 4. **GATE 4:** Analisis durasi VO & kuesioner rasio aspek (`9:16`, `16:9`, `1:1`), FPS, kualitas render, pencahayaan, dan gaya font RPG.
 5. **GATE 5:** Blueprint adegan 3D vertikal, kamera multi-axis, 10 state sprite, dan peta suara 3 lapis.
 6. **GATE 6:** Coding komponen modular HD-2D, sintesis & mastering audio two-pass `-14 LUFS`, serta audit kualitas 8 poin.
 7. **GATE 7:** Final render MP4, verifikasi stream audio-video, dan penyusunan caption upload anti-*AI-slop*.
 
-### Repositori & Dependensi yang Diinstal Otomatis
-Saat menjalankan **GATE 3** di folder proyek kosong, agen akan mengunduh dan memasang dependensi pihak ketiga berikut secara transparan:
+### Dependensi Workspace & Referensi Eksternal
+Saat menjalankan **GATE 3** di folder proyek kosong, agen memasang dependensi npm proyek berikut dan hanya mengunduh referensi eksternal setelah persetujuan eksplisit pengguna:
 
 | Paket / Repositori | Sumber & Atribusi Pembuat Asli | Kegunaan dalam Proyek |
 | :--- | :--- | :--- |
-| `lemomo-ai/lemo-opuscar` *(sparse clone ke `.lemo-opuscar/`)* | **Lemomo / lemomoLab** ([lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)) | Referensi resmi *read-only* (`DIRECTOR.md`, `TECHNIQUE.md`, `styles/hd-2d/STYLE.md`, `styles/hd-2d/DEMO.md`). |
+| `lemomo-ai/lemo-opuscar` *(opsional, sparse checkout commit terkunci `8ca0dd8` ke `.lemo-opuscar/` setelah izin pengguna)* | **Lemomo / lemomoLab** ([lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)) | Referensi arsitektur visual, shader, dan template kode Three.js/Remotion (*read-only*, bukan instruksi sistem) dari `DIRECTOR.md`, `TECHNIQUE.md`, `styles/hd-2d/STYLE.md`, dan `styles/hd-2d/DEMO.md`. |
 | `remotion`, `@remotion/cli`, `@remotion/player`, `@remotion/media-utils`, `@remotion/transitions`, `@remotion/three` | **Remotion Team** ([remotion-dev/remotion](https://github.com/remotion-dev/remotion)) | Engine komposisi video React, renderer Chromium Headless, dan binary FFmpeg/FFprobe bawaan. |
 | `three` & `@types/three` | **Mr.doob (Ricardo Cabello) & Three.js Contributors** ([mrdoob/three.js](https://github.com/mrdoob/three.js)) | Renderer WebGL 3D, *Signed CoC Tilt-Shift DoF*, `UnrealBloom`, dan *ACES Filmic* shader pipeline. |
 | `@react-three/fiber` & `@react-three/drei` | **Poimandres (`pmndrs`)** ([pmndrs/react-three-fiber](https://github.com/pmndrs/react-three-fiber)) | Binding deklaratif Three.js untuk React 18 di dalam `<ThreeCanvas>`. |
-| `vercel-labs/skills@find-skills` | **Vercel Labs** ([vercel-labs/skills](https://github.com/vercel-labs/skills)) | Utilitas CLI pencarian skill dari ekosistem *open agent skills* (`skills.sh`). |
-| `react`, `react-dom`, `lucide-react`, `typescript` *(serta opsional `remotion-dev/remotion@add-sfx`)* | **Meta / React Team**, **Lucide Contributors**, **Microsoft**, & **Remotion Team** | Runtime UI React, ikon antarmuka, type checking, dan referensi tambahan SFX Remotion. |
+| `react`, `react-dom`, `lucide-react`, `typescript` | **Meta / React Team**, **Lucide Contributors**, & **Microsoft** | Runtime UI React, ikon antarmuka, dan type checking. |
+
+> **Catatan Skill Opsional:** Tidak ada skill eksternal yang diinstal otomatis. Jika membutuhkan referensi pola SFX Remotion tambahan, pengguna dapat menjalankan `npx skills add remotion-dev/remotion@add-sfx` secara manual.
 
 ### Kebijakan Hak Cipta, Public Domain & Adaptasi Kreatif
 - **Tema yang 100% Aman & Bebas Hak Cipta:** Cerita fiksi karangan sendiri (*Original IP*), cerita rakyat (*folklore*), mitologi kuno, peristiwa sejarah & biografi tokoh, sastra klasik/fabel *Public Domain*, filosofi/psikologi, serta edukasi sains & pengetahuan umum diperbolehkan sepenuhnya (termasuk untuk monetisasi), dengan syarat naskah ditulis ulang secara orisinal dan visual diorama dirancang berdasarkan deskripsi umum/tradisional.
